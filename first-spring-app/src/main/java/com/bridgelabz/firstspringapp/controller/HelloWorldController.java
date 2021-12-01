@@ -25,4 +25,12 @@ public class HelloWorldController {
     public String byUsingDto(@RequestBody User user){
         return user.toString();
     }
+
+    @PutMapping(value = "/hello3{firstName}")
+    public String sayHelloFirstAndLastName (
+            @PathVariable(name = "firstName") String firstName,
+            @RequestParam (name = "lastName") String lastName
+    ){
+        return "Hello, " + firstName + " " + lastName;
+    }
 }
