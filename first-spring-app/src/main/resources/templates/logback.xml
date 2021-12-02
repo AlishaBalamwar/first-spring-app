@@ -7,7 +7,7 @@
         </encoder>
     </appender>
     <logger name="org.springframework" level="INFO" />
-    <logger name="com.bridgelabz" level="TRACE" />
+    <logger name="com.bridgelabz" level="DEBUG" />
     <root>
         <appender-ref ref="STDOUT" />
     </root>

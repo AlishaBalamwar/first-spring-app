@@ -1,6 +1,8 @@
 package com.bridgelabz.firstspringapp;
 
 import com.bridgelabz.firstspringapp.component.DemoBean;
+import com.bridgelabz.firstspringapp.component.EmployeeBean;
+
 import com.bridgelabz.firstspringapp.controller.HelloWebController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,5 +21,9 @@ public class FirstSpringAppApplication {
 		DemoBean demoBean = context.getBean(DemoBean.class);
 		logger.debug("Demo Bean = "+demoBean.toString());
 		System.out.println(context.getBean(HelloWebController.class));
+		EmployeeBean employeeBean = context.getBean(EmployeeBean.class);
+		employeeBean.setEmpId(105);
+		employeeBean.setEmpName("Alisha");
+		employeeBean.showEmployeeDetails();
 	}
 }
