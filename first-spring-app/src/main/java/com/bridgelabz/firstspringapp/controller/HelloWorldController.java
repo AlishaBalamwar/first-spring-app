@@ -12,21 +12,24 @@ public class HelloWorldController {
     }
 
     @RequestMapping(value = {"/query"}, method = RequestMethod.GET)
-    public String sayHello(@RequestParam(value = "name") String name){
+    public String sayHello(
+            @RequestParam(value = "name") String name){
         return "Hello " + name + "!";
     }
 
     @GetMapping("/param/{name}")
-    public String sayHello1(@PathVariable String name){
+    public String sayHello1(
+            @PathVariable String name){
         return "Hello " + name + "!";
     }
 
     @PostMapping(value = "/hello2")
-    public String byUsingDto(@RequestBody User user){
-        return user.toString();
+    public User byUsingDto(
+            @RequestBody User user){
+        return user;
     }
 
-    @PutMapping(value = "/hello3{firstName}")
+    @PutMapping(value = "/hello3/{firstName}")
     public String sayHelloFirstAndLastName (
             @PathVariable(name = "firstName") String firstName,
             @RequestParam (name = "lastName") String lastName
